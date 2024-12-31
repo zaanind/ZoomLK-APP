@@ -1,0 +1,3 @@
+eas build -p android --profile preview --no-wait --clear-cache
+
+npm run web lol
