@@ -6,6 +6,7 @@ import axios from 'axios';
 import {  Button, ScrollView, StatusBar, View, Text } from'react-native';
 import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
+import RenderHtml from 'react-native-render-html';
 
 
 export default function FullPostScreen() {
@@ -39,6 +40,18 @@ export default function FullPostScreen() {
     const backbtnpress = () => {
       navigation.navigate('index');
     };
+
+    const tagsStyles = {
+      div: {     
+        color: '#fff'
+      },
+      span: {     
+        color: '#fff'
+      }, 
+    }
+
+   // var stylehtml = "<style>.css-text-146c3p1 {color: #fff;}</style>";
+
   
     return (
       <ScrollView style={styles.container}>
@@ -55,7 +68,9 @@ export default function FullPostScreen() {
          <Text style={styles.title}> {post.title.rendered} </Text>
          <Image source={{ uri: post.jetpack_featured_media_url }} style={styles.image}
              resizeMode='contain' />
-        <Text style={styles.content}>{post.content.rendered}</Text>
+
+  
+        <RenderHtml style={styles.content} source={{html: post.content.rendered }} tagsStyles={tagsStyles} />
 
           
        </ScrollView>
