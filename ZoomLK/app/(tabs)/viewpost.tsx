@@ -8,6 +8,8 @@ import { useRoute } from '@react-navigation/native';
 import { useNavigation } from '@react-navigation/native';
 import RenderHtml from 'react-native-render-html';
 
+const { convert } = require('html-to-text');
+
 
 export default function FullPostScreen() {
     const route = useRoute();
@@ -40,15 +42,23 @@ export default function FullPostScreen() {
     const backbtnpress = () => {
       navigation.navigate('index');
     };
-
+    
     const tagsStyles = {
       div: {     
         color: '#fff'
       },
-      span: {     
+      p: {     
         color: '#fff'
       }, 
     }
+
+    function dectextbyhtml(html) {
+      html = convert(html);
+
+
+    }
+
+
 
    // var stylehtml = "<style>.css-text-146c3p1 {color: #fff;}</style>";
 
@@ -70,7 +80,7 @@ export default function FullPostScreen() {
              resizeMode='contain' />
 
   
-        <RenderHtml style={styles.content} source={{html: post.content.rendered }} tagsStyles={tagsStyles} />
+        <RenderHtml style={styles.content} source={{html: post.content.rendered }} tagsStyles={tagsStyles}/>
 
           
        </ScrollView>
