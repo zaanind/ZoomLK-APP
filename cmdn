@@ -1,0 +1,5 @@
+eas build -p android --profile preview --no-wait --clear-cache
+
+npm install -g eas-cli
+
+https://www.npmjs.com/package/react-native-render-html

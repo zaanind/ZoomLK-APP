@@ -13,38 +13,29 @@
     },
     "android": {
       "adaptiveIcon": {
-        "foregroundImage": "./assets/images/zoomlogo.png",
-        "backgroundColor": "#575851"
-      },
-      "package": "com.zaanind.ZoomLK"
+        "foregroundImage": "./assets/images/adaptive-icon.png",
+        "backgroundColor": "#1b9ee2"
+      }
     },
     "web": {
       "bundler": "metro",
       "output": "static",
-      "favicon": "./assets/images/zoomlogo.png"
+      "favicon": "./assets/images/icon.png"
     },
     "plugins": [
       "expo-router",
       [
         "expo-splash-screen",
         {
-          "image": "./assets/images/zoomlogo.png",
-          "imageWidth": 200,
+          "image": "./assets/images/icon.png",
+          "imageWidth": 650,
           "resizeMode": "contain",
-          "backgroundColor": "#575851"
+          "backgroundColor": "#1b9ee2"
         }
       ]
     ],
     "experiments": {
       "typedRoutes": true
-    },
-    "extra": {
-      "router": {
-        "origin": false
-      },
-      "eas": {
-        "projectId": "ab50c6ba-7b60-4a4b-8cf1-8f16024b52a4"
-      }
     }
   }
 }

@@ -36,13 +36,24 @@ export default function TabLayout() {
       />
       <Tabs.Screen
         name="explore"
-        style='display:none;'
         options={{
           title: 'Explore',
           tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
          // tabBarStyle: { display: 'none' },
         }}
       />
+
+<Tabs.Screen
+        name="viewpost"       
+        options={{
+          title: 'View Sub',
+          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          tabBarStyle: { display: 'none' },
+        }}
+      />
     </Tabs>
+    
+
+    
   );
 }
